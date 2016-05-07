@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<AirlineRequest>
+	<Purchase>
+		<Customer>
+			<FirstName>John</FirstName>
+			<LastName>Doe</LastName>
+			<Street>123 Main</Street>
+			<City>Mycity</City>
+			<Country>US</Country>
+			<Zip>12345</Zip>
+		</Customer>
+		<FlightNumber>KE021</FlightNumber>
+		<Date>11/15/2005</Date>
+		<Price>1800000</Price>
+		<CreditCard>2100-3300-4400-5600</CreditCard>
+	</Purchase>
+	<Response>
+		<Status>Please Schedule</Status>
+		<Details>Morning Calm</Details>
+	</Response>
+</AirlineRequest>

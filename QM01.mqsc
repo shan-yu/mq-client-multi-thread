@@ -1,0 +1,31 @@
+***********************************************
+* How to use this MQSC script:
+* runmqsc QM01 < QM01.mqsc
+***********************************************
+* We are using  port 1440 for MQ TCP listener, you can change to any other port
+DEFINE LISTENER(LISTENER.TCP) TRPTYPE(TCP) PORT(1440) CONTROL(QMGR) REPLACE
+
+START LISTENER(LISTENER.TCP)
+
+* For MQ V7.1 or above: Disable channel authentication record temporarily
+ALTER QMGR CHLAUTH(DISABLED) 
+
+* For MQ V8 or above: Disable connection authentication temporarily
+ALTER QMGR CONNAUTH(' ')
+REFRESH SECURITY TYPE(CONNAUTH)
+
+ALTER QMGR CCSID(819)
+
+DEFINE QLOCAL(DLQ) REPLACE +
+  MAXDEPTH(999999999) MAXMSGL(4194304)
+
+ALTER QMGR DEADQ(DLQ)
+
+* We use SHARECNV(1) here to avoid contention for each thread's connection
+DEFINE CHANNEL(CH.SVRCONN) CHLTYPE(SVRCONN) +
+  SHARECNV(1) REPLACE
+  
+* Please restart queue manager after this is executed successfully
+* And define TESTQ for test only after you have set DefaultQBufferSize
+* and DefaultPQBufferSize in qm.ini of this queue manager.
+* DEFINE QLOCAL(TESTQ) MAXDEPTH(999999999)
