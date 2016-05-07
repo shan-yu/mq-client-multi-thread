@@ -1,19 +1,9 @@
 package com.mq.util;
 
 import java.io.File;
-import java.io.FileWriter;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.FileNotFoundException;
-import java.util.List;
-
-// Applicable since Java 7
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
-import java.nio.charset.Charset;
+import java.io.IOException;
 
 /**
  * A file utility class providing common operations on files and directories
