@@ -70,6 +70,6 @@ Please use a user id which belongs to mqm group, so that you are authorized to i
 Shan Yu (yushan0624@gmail.com or yushan@cn.ibm.com)
 
 ## License
-
+MQClientMultiThread uses [Apache License Version 2.0 software license](LICENSE).
 
 
