@@ -12,6 +12,8 @@ To run the program, you must have JRE (6.0 or above) installed or configured pro
 
 Besides, you should have IBM MQ client or server installed on the same machine. To use the logging function, you should also have Log4j downloaded and configured.
 
+Before running the program, you can compile the source codes and export an executable jar, e.g. MQClientMultiThread.jar
+
 The command to run the program is:
   java -jar MQClientMultiThread.jar 
 <br>
@@ -67,7 +69,7 @@ Please use a user id which belongs to mqm group, so that you are authorized to i
 <br>
 
 ## Author
-Shan Yu (yushan0624@gmail.com or yushan@cn.ibm.com)
+Shan Yu (yushan0624@gmail.com)
 
 ## License
 MQClientMultiThread uses [Apache License Version 2.0 software license](LICENSE).
